@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us - Brilliant Bites Dental</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+
+<body>
+
+<header class="contact-header">
+    <div class="logo-container">
+        <img src="logo.png" alt="Logo" class="logo-img">
+        <div class="clinic-name">
+            <span class="line1">BRILLIANT BITES</span>
+            <span class="line2">DENTAL</span>
+        </div>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <a href="contact.html" class="btn">Book Now</a>
+</header>
+
+<section class="contact-section">
+    <h1><b>Contact Us</b></h1>
+
+    <div class="contact-container">
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+            <h2><b>Get In Touch With Us</b></h2> 
+			<hr>
+			<br>
+            <p><strong>Phone:</strong> +27 10 222 0648 </p>
+			<p><strong>WhatsApp Number: </strong> +27 67 797 7404 </p>
+            <p><strong>Address:</strong> </p>
+			<p>Healthcubes Medical And Dental Center</p>
+			<p>Randburg Square Mall, Level 3,</p>
+			<p>Pretoria Avenue (Enterance 1)</p>
+			<br>
+
+            <h3><b>Operating Hours</b></h3>
+            <p>Mon - Fri: 08:00 AM - 04:00 PM</p>
+            <p>Saturday: 08:00 AM - 12:00 PM</p>
+            <p>Sunday: Closed</p>
+			<br>
+			<div class="notice">
+			<p> * Please note we take our last booking half an hour before we close </p>
+			</div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <h2>Book Appointment</h2>
+            <form id="appointmentForm">
+				<input type="text" id="name" placeholder="Full Name" required>
+				<input type="email" id="email" placeholder="Email Address" required>
+				<input type="tel" id="phone" placeholder="Phone Number (e.g. 0671234567)" required 
+				pattern="^0[0-9]{9}$" title="Please enter a valid 10-digit phone number starting with 0">
+				<input type="date" id="date" required>
+				
+				<select id="payment" required>
+					<option value="" disabled selected>Select Payment Method</option>
+					<option value="Cash">Cash (EFT)</option>
+					<option value="Medical Aid">Medical Aid</option>
+				</select>
+
+        <div id="medicalAidSection" style="display: none; margin-top: 10px;">
+            <input type="text" id="medicalAidName" placeholder="Which Medical Aid? (e.g. Discovery, GEMS)">
+        </div>
+				<textarea id="message" placeholder="Message (Optional)"></textarea>
+				<button type="submit">Book via WhatsApp</button>
+			</form>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+     <p>© 2024 Brilliant Bites Dental | All Rights Reserved</p>
+</footer>
+
+<script>
+    // 1. HANDLER FOR SHOWING/HIDING MEDICAL AID (Runs immediately on change)
+    const paymentSelect = document.getElementById('payment');
+    const medicalAidSection = document.getElementById('medicalAidSection');
+    const medicalAidInput = document.getElementById('medicalAidName');
+
+    paymentSelect.addEventListener('change', function() {
+        if (this.value === 'Medical Aid') {
+            medicalAidSection.style.display = 'block';
+            medicalAidInput.setAttribute('required', ''); 
+        } else {
+            medicalAidSection.style.display = 'none';
+            medicalAidInput.removeAttribute('required');
+            medicalAidInput.value = ''; 
+        }
+    });
+
+    // 2. HANDLER FOR WHATSAPP SUBMISSION
+    document.getElementById("appointmentForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let phone = document.getElementById("phone").value;
+        let date = document.getElementById("date").value;
+        let payment = paymentSelect.value;
+        let medicalAid = medicalAidInput.value;
+        let message = document.getElementById("message").value;
+
+        // Build the WhatsApp text
+        let whatsappMessage = 
+            "🦷 *BRILLIANT BITES DENTAL: NEW BOOKING*%0A" + 
+            "*Name:* " + name + "%0A" +
+            "*Email:* " + email + "%0A" +
+            "*Phone:* " + phone + "%0A" +
+            "*Date:* " + date + "%0A" +
+            "*Payment:* " + payment;
+
+        // Add Medical Aid name only if they selected it
+        if (payment === "Medical Aid") {
+            whatsappMessage += " (" + medicalAid + ")";
+        }
+
+        whatsappMessage += "%0A*Message:* " + (message ? message : "None");
+
+        let phoneNumber = "27677977404"; 
+        let url = "https://wa.me/" + phoneNumber + "?text=" + whatsappMessage;
+
+        window.open(url, "_blank");
+    });
+</script>
+
+</body>
+</html>
+
