@@ -18,6 +18,8 @@
         </div>
     </div>
 
+<div class="menu-icon" onclick="toggleMenu()">☰</div>
+
     <nav id="nav-menu">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -89,7 +91,7 @@
 
 <script>
 function toggleMenu() {
-    const nav = document.getElementById('nav-menu');
+    const nav = document.querySelector('nav');
     nav.classList.toggle('active');
 }
 </script>
