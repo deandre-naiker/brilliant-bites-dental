@@ -689,3 +689,49 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+/* --- THE ULTIMATE MOBILE FIX --- */
+@media screen and (max-width: 768px) {
+    
+    /* Force the body to not scroll sideways */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Reset the About Section entirely */
+    .about-content, .about-container, .about-text {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important; /* Forces it to stop being 'wide' */
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Fix the paragraphs so they use the full width */
+    .about-text p {
+        width: 100% !important;
+        display: block !important;
+        text-align: left !important; /* Left align is often cleaner on mobile */
+        margin-bottom: 15px !important;
+        word-wrap: break-word !important; /* Prevents long words from pushing the edge */
+    }
+
+    /* Fix the image container */
+    .about-image {
+        display: block !important;
+        width: 90% !important;
+        margin: 20px auto !important;
+    }
+
+    .about-image img {
+        width: 100% !important;
+        height: auto !important;
+        display: block;
+    }
+}
