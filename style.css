@@ -562,33 +562,44 @@ footer {
 
 /* Mobile Fix for About Us Page */
 @media (max-width: 768px) {
+    /* 1. Force the content section to use the full screen width */
+    .about-content {
+        padding: 40px 15px !important; /* Reduces the huge side-gaps */
+    }
+
+    /* 2. Stack the text and image */
     .about-container {
-        flex-direction: column; 
-        text-align: center;
-        gap: 30px;
-        padding: 0 15px; /* Adds breathing room on the sides of the screen */
+        display: block !important; /* Disables flexbox entirely for mobile */
+        width: 100% !important;
     }
 
+    /* 3. Force the text box to be full width */
     .about-text {
-        width: 100%;       /* Forces text to use full screen width */
-        flex: none;        /* Disables the "flex-grow" from desktop */
-        padding: 0;        /* Resets any conflicting padding */
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin-bottom: 30px;
+        text-align: center;
     }
 
+    /* 4. Fix the paragraphs so they don't "squish" */
     .about-text p {
-        font-size: 16px;   /* Slightly smaller for mobile readability */
+        display: block !important;
+        width: 100% !important;
         margin-bottom: 15px;
-        line-height: 1.5;
+        font-size: 16px;
+        line-height: 1.6;
     }
 
+    /* 5. Center the image and make it fit the screen */
     .about-image {
-        width: 100%;       /* Ensures image container is wide */
-        max-width: 100%;   /* Allows it to fill the space */
-        order: 2;          /* Keeps image below the text */
+        width: 100% !important;
+        max-width: 300px !important; /* Prevents it from being too huge */
+        margin: 0 auto !important;
     }
 
     .about-image img {
-        width: 100%;       /* Makes the actual image responsive */
+        width: 100% !important;
         height: auto;
     }
 }
