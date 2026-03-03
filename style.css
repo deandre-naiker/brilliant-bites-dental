@@ -35,6 +35,12 @@ header {
     width: auto;
 }
 
+@media(max-width: 600px) {
+    .logo-img {
+        height: 80px;
+    }
+}
+
 /* Clinic name */
 .clinic-name {
     display: flex;
@@ -53,13 +59,11 @@ header {
     font-size: 20px;
     font-weight: 750; 
     letter-spacing: 1px;
-	/*color: #25CB16; */
 }
 
 .line2 {
     font-size: 20px;
     font-weight: 750;
-    /*color: #25CB16; /* green accent like your logo */
     letter-spacing: 2px;
 	margin-left: 45px;
 }
@@ -97,6 +101,16 @@ nav a:hover {
     justify-content: center;
     text-align: center;
     color: white;
+}
+
+@media(max-width: 600px) {
+    .hero {
+        height: 60vh;
+        padding: 20px;
+    }
+    .hero-content h1 {
+        font-size: clamp(24px, 5vw, 48px);
+    }
 }
 
 .hero-content h1 {
@@ -148,16 +162,30 @@ nav a:hover {
 
 .service-cards {
     display: flex;
+    flex-wrap: wrap;       /* Allows cards to wrap to the next line */
     justify-content: space-between;
     gap: 20px;
 }
 
 .card {
-    flex: 1;
+    flex: 1 1 calc(33.333% - 20px);  /* 3 cards per row with spacing */
     padding: 30px;
     background: #f4f4f4;
     border-radius: 10px;
     transition: 0.3s;
+    box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+    .card {
+        flex: 1 1 calc(50% - 20px);  /* 2 cards per row on smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .card {
+        flex: 1 1 100%;  /* 1 card per row on mobile */
+    }
 }
 
 .card:hover {
@@ -166,19 +194,36 @@ nav a:hover {
 }
 
 /* About */
-.about {
-	border-bottom: 5px solid #F7CC03;
+.about-index {
     padding: 80px 10%;
     background: #f9f9f9;
     text-align: center;
 }
 
-.about h2 {
+.about-index h2 {
     margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    color: black;  /* Make heading black */
+}
+
+.about-index p {
+    color: black;  /* Make paragraph text black */
+    font-size: 18px;  /* Optional: easier to read */
+    line-height: 1.6;
+}
+
+/* Highlight short description */
+.about-index{
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333; /* Slightly darker for emphasis */
 }
 
 /* Footer */
 footer {
+	border-top:5px solid #FFD700;
     padding: 20px;
     text-align: center;
     background: #18870E;
@@ -235,7 +280,6 @@ footer {
 .contact-section {
     padding: 80px 10%;
     text-align: center;
-	border-bottom: 5px solid #FFD700; 
 }
 
 .contact-section h1 {
@@ -305,5 +349,246 @@ footer {
     }
     .contact-section {
         padding: 40px 5%;
+    }
+}
+
+.find-us-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px;
+}
+
+.find_header {
+	text-align: center;
+	margin: 20px auto
+	/*text-decoration: underline;*/
+}
+
+.map-container {
+    flex: 1.5;
+	width: 100%;
+	height:100%;
+    min-width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.details-box {
+    flex: 1; /* Address and Socials take less space */
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.instagram-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border: 2px solid #333; /* Dark grey outline */
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect: The "Brilliant Bites" Upgrade */
+.instagram-btn:hover {
+    background-color: #E1306C; /* Instagram Pink */
+    border-color: #E1306C;
+    color: white;
+    transform: translateY(-3px); /* Subtle lift */
+    box-shadow: 0 4px 12px rgba(225, 48, 108, 0.3);
+}
+
+.instagram-btn svg {
+    transition: stroke 0.3s ease;
+}
+
+.instagram-btn:hover svg {
+    stroke: white; /* Icon turns white on hover */
+}
+
+
+/*ABOUT US */
+
+/* About Hero */
+.about-hero {
+    color: #18870E;
+    text-align: center;
+    padding: 40px 30px;
+	padding-bottom:10px;
+}
+
+.about-hero h1 {
+    font-size: 40px;
+}
+
+.about-hero h1::after {
+    content: "";
+    display: block;
+    width: 180px;
+    height: 4px;
+    background-color: #ffc107; /* yellow */
+    margin: 10px auto 0;
+    border-radius: 5px;
+}
+
+/* About Content */
+.about-content {
+    padding: 60px 20px;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1100px;
+    margin: auto;
+    flex-wrap: wrap;
+	padding-bottom: 50px;
+	
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    color: #18870E;
+    margin-bottom: 15px;
+}
+
+.about-image {
+    flex: 1;
+	width: 100%;
+    max-width: 400px;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Mission Section */
+.mission-section {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.mission-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.mission-box:hover {
+    background-color: #F4F3A6;   /* light yellow */
+}
+
+.mission-box h3 {
+    color: #18870E;
+    margin-bottom: 10px;
+}
+
+/* SERVICES */
+
+.services-hero{
+    text-align: center;
+    padding: 40px 30px;
+	padding-bottom:10px;
+}
+
+/* Service List Container */
+.services-section {
+    padding: 80px 10%;
+    background-color: #f9f9f9;
+}
+
+/* GRID LAYOUT */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* SERVICE CARD BLOCK */
+.service-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* HOVER EFFECT */
+.service-card:hover {
+    background-color: #fff9c4;   /* light yellow */
+    transform: translateY(-8px);
+}
+
+/* ICON */
+.service-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+/* TITLE */
+.service-card h3 {
+    color: #008000;
+    margin-bottom: 10px;
+}
+
+.center-btn {
+            padding-top: 50px;
+            text-align: right; /* Moves the button to the right */
+            width: 100%;       /* Ensures the container spans the full width */
+            padding-right: 20px; /* Optional: adds a little space from the edge */
+}
+
+ 
+.center-btn .btn {
+            background-color: #FFD700;
+            color: black;            /* Ensures text is visible */
+            text-decoration: none;   /* Removes the default link underline */
+            padding: 15px 30px;
+            border-radius: 25px;
+            display: inline-block;   /* Allows padding and width to work correctly */
+            text-transform: uppercase; /* Optional: makes it look more like a button */
+        }
+
+        /* Hover effect to keep it interactive */
+        .center-btn .btn:hover {
+            background-color: #e6c200;
+        }
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 992px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .services-grid {
+        grid-template-columns: 1fr;
     }
 }
