@@ -79,16 +79,27 @@ nav a:hover {
 }
 
 .btn {
-    padding: 10px 20px;
+    display: inline-block;    /* Ensures padding and height are respected */
+    padding: 15px 30px;       /* Increased padding for a larger button */
     background: #F7CC03;
     color: #333;
     text-decoration: none;
     border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;          /* Matches your Schedule button size */
     transition: 0.3s;
+    line-height: 1;           /* Keeps text centered vertically */
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
 }
 
 .btn:hover {
-    background: #E8D758;
+    background: #E8D758; 
+    transform: translateY(-2px);
+
 }
 
 /* Hero */
@@ -243,6 +254,48 @@ footer {
 
     .hero-content h1 {
         font-size: 32px;
+    }
+}
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #18870E;
+    margin-left: 15px;
+}
+
+/* 2. Mobile Styles */
+@media (max-width: 900px) {
+    .menu-icon {
+        display: block; /* Show hamburger */
+    }
+
+    nav {
+        display: none; /* Hide standard links */
+        flex-direction: column;
+        position: absolute;
+        top: 150px; /* Adjust based on your header height */
+        left: 0;
+        width: 100%;
+        background: white;
+        border-bottom: 5px solid #FFD700;
+        padding: 20px 0;
+        z-index: 1000;
+    }
+
+    /* When the menu is toggled open */
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        margin: 10px 0;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .hide-on-mobile {
+        display: none;
     }
 }
 
@@ -505,6 +558,39 @@ footer {
 .mission-box h3 {
     color: #18870E;
     margin-bottom: 10px;
+}
+
+/* Mobile Fix for About Us Page */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column; 
+        text-align: center;
+        gap: 30px;
+        padding: 0 15px; /* Adds breathing room on the sides of the screen */
+    }
+
+    .about-text {
+        width: 100%;       /* Forces text to use full screen width */
+        flex: none;        /* Disables the "flex-grow" from desktop */
+        padding: 0;        /* Resets any conflicting padding */
+    }
+
+    .about-text p {
+        font-size: 16px;   /* Slightly smaller for mobile readability */
+        margin-bottom: 15px;
+        line-height: 1.5;
+    }
+
+    .about-image {
+        width: 100%;       /* Ensures image container is wide */
+        max-width: 100%;   /* Allows it to fill the space */
+        order: 2;          /* Keeps image below the text */
+    }
+
+    .about-image img {
+        width: 100%;       /* Makes the actual image responsive */
+        height: auto;
+    }
 }
 
 /* SERVICES */
