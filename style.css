@@ -1,3 +1,4 @@
+/* GLOBAL RESET */
 * {
     margin: 0;
     padding: 0;
@@ -7,12 +8,11 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-	font-weight: bold;
+    font-weight: bold;
 }
 
-/* Header */
+/* HEADER */
 header {
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,17 +21,14 @@ header {
     border-bottom: 5px solid #FFD700;
 }
 
-
-/* Logo container */
 .logo-container {
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
-/* Make logo bigger */
 .logo-img {
-    height: 150px;   /* Increase this if needed */
+    height: 150px;
     width: auto;
 }
 
@@ -41,7 +38,6 @@ header {
     }
 }
 
-/* Clinic name */
 .clinic-name {
     display: flex;
     flex-direction: column;
@@ -51,22 +47,21 @@ header {
 .clinic-name span {
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
-	color: #333;
-	font-size: 25px;
+    color: #333;
+    font-size: 25px;
 }
 
-.line1 {
+.line1, .line2 {
     font-size: 20px;
-    font-weight: 750; 
+    font-weight: 750;
     letter-spacing: 1px;
 }
 
 .line2 {
-    font-size: 20px;
-    font-weight: 750;
     letter-spacing: 2px;
-	margin-left: 45px;
+    margin-left: 45px;
 }
+
 nav a {
     margin: 0 15px;
     text-decoration: none;
@@ -79,16 +74,21 @@ nav a:hover {
 }
 
 .btn {
-    display: inline-block;    /* Ensures padding and height are respected */
-    padding: 15px 30px;       /* Increased padding for a larger button */
+    display: inline-block;
+    padding: 15px 30px;
     background: #F7CC03;
     color: #333;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    font-size: 18px;          /* Matches your Schedule button size */
+    font-size: 18px;
     transition: 0.3s;
-    line-height: 1;           /* Keeps text centered vertically */
+    line-height: 1;
+}
+
+.btn:hover {
+    background: #E8D758;
+    transform: translateY(-2px);
 }
 
 .header-actions {
@@ -96,15 +96,9 @@ nav a:hover {
     align-items: center;
 }
 
-.btn:hover {
-    background: #E8D758; 
-    transform: translateY(-2px);
-
-}
-
-/* Hero */
+/* HERO SECTION */
 .hero {
-	border-bottom: 5px solid #F7CC03;
+    border-bottom: 5px solid #F7CC03;
     height: 90vh;
     background: linear-gradient(#18870E);
     display: flex;
@@ -112,16 +106,6 @@ nav a:hover {
     justify-content: center;
     text-align: center;
     color: white;
-}
-
-@media(max-width: 600px) {
-    .hero {
-        height: 60vh;
-        padding: 20px;
-    }
-    .hero-content h1 {
-        font-size: clamp(24px, 5vw, 48px);
-    }
 }
 
 .hero-content h1 {
@@ -134,10 +118,20 @@ nav a:hover {
     margin-bottom: 30px;
 }
 
-/* Schedule Appointment Button */
+@media(max-width: 600px) {
+    .hero {
+        height: 60vh;
+        padding: 20px;
+    }
+    .hero-content h1 {
+        font-size: clamp(24px, 5vw, 48px);
+    }
+}
+
+/* SCHEDULE BUTTON */
 .schedule-btn {
     display: inline-block;
-    background-color: #F7CC03;   /* Green */
+    background-color: #F7CC03;
     color: #333;
     padding: 15px 35px;
     font-size: 18px;
@@ -146,22 +140,19 @@ nav a:hover {
     text-decoration: none;
     transition: all 0.3s ease;
     margin-top: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-/* Hover Effect */
 .schedule-btn:hover {
-    background-color: #E8D758;   /* Yellow */
-    color: #333;
+    background-color: #E8D758;
     transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
-	animation: pulse 2s infinite;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+    animation: pulse 2s infinite;
 }
 
-
-/* Services */
+/* SERVICES SECTION */
 .services {
-	border-bottom: 5px solid #F7CC03;
+    border-bottom: 5px solid #F7CC03;
     padding: 80px 10%;
     text-align: center;
 }
@@ -173,13 +164,13 @@ nav a:hover {
 
 .service-cards {
     display: flex;
-    flex-wrap: wrap;       /* Allows cards to wrap to the next line */
+    flex-wrap: wrap;
     justify-content: space-between;
     gap: 20px;
 }
 
 .card {
-    flex: 1 1 calc(33.333% - 20px);  /* 3 cards per row with spacing */
+    flex: 1 1 calc(33.333% - 20px);
     padding: 30px;
     background: #f4f4f4;
     border-radius: 10px;
@@ -187,75 +178,57 @@ nav a:hover {
     box-sizing: border-box;
 }
 
-@media (max-width: 900px) {
-    .card {
-        flex: 1 1 calc(50% - 20px);  /* 2 cards per row on smaller screens */
-    }
-}
-
-@media (max-width: 600px) {
-    .card {
-        flex: 1 1 100%;  /* 1 card per row on mobile */
-    }
-}
-
 .card:hover {
     transform: translateY(-10px);
     background: #F4F3A6;
 }
 
-/* About */
+@media(max-width: 900px) {
+    .card {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media(max-width: 600px) {
+    .card {
+        flex: 1 1 100%;
+    }
+}
+
+/* ABOUT SECTION */
 .about-index {
     padding: 80px 10%;
     background: #f9f9f9;
     text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
 }
 
 .about-index h2 {
     margin-bottom: 20px;
     font-size: 32px;
     font-weight: bold;
-    color: black;  /* Make heading black */
+    color: black;
 }
 
 .about-index p {
-    color: black;  /* Make paragraph text black */
-    font-size: 18px;  /* Optional: easier to read */
+    color: black;
+    font-size: 18px;
     line-height: 1.6;
 }
 
-/* Highlight short description */
-.about-index{
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #333; /* Slightly darker for emphasis */
-}
-
-/* Footer */
+/* FOOTER */
 footer {
-	border-top:5px solid #FFD700;
+    border-top: 5px solid #FFD700;
     padding: 20px;
     text-align: center;
     background: #18870E;
     color: white;
 }
 
-/* Responsive */
-@media(max-width: 900px) {
-    .service-cards {
-        flex-direction: column;
-    }
-
-    header {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .hero-content h1 {
-        font-size: 32px;
-    }
-}
+/* RESPONSIVE NAVIGATION */
 .menu-icon {
     display: none;
     font-size: 30px;
@@ -264,17 +237,15 @@ footer {
     margin-left: 15px;
 }
 
-/* 2. Mobile Styles */
-@media (max-width: 900px) {
+@media(max-width: 900px) {
     .menu-icon {
-        display: block; /* Show hamburger */
+        display: block;
     }
-
     nav {
-        display: none; /* Hide standard links */
+        display: none;
         flex-direction: column;
         position: absolute;
-        top: 150px; /* Adjust based on your header height */
+        top: 150px;
         left: 0;
         width: 100%;
         background: white;
@@ -282,27 +253,26 @@ footer {
         padding: 20px 0;
         z-index: 1000;
     }
-
-    /* When the menu is toggled open */
     nav.active {
         display: flex;
     }
-
     nav a {
         margin: 10px 0;
         font-size: 20px;
         text-align: center;
     }
-
     .hide-on-mobile {
         display: none;
     }
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
 
-/* Contact Page */
-
+/* CONTACT PAGE */
 .contact-header {
-    background: #18870E; /* dark green */
+    background: #18870E;
 }
 
 .contact-header nav a {
@@ -314,7 +284,7 @@ footer {
 }
 
 .contact-header .btn {
-    background: #f2c200; /* yellow */
+    background: #f2c200;
     color: #000;
 }
 
@@ -322,12 +292,8 @@ footer {
     background: #ffd633;
 }
 
-.contact-header nav a {
-    color: white;
-}
-
 .contact-header nav a:hover {
-    color: #F7CC03;  /* yellow hover only on contact page */
+    color: #F7CC03;
 }
 
 .contact-section {
@@ -340,7 +306,6 @@ footer {
     font-size: 36px;
 }
 
-/* The Container: Keep side-by-side */
 .contact-container {
     display: flex;
     justify-content: space-between;
@@ -351,12 +316,11 @@ footer {
 }
 
 .contact-info, .contact-form {
-    flex: 1; 
-   
+    flex: 1;
 }
 
 .notice {
-	color: red;
+    color: red;
 }
 
 .contact-form input,
@@ -366,10 +330,10 @@ footer {
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 14px;
-    width: 100%;            
-    box-sizing: border-box;  
+    width: 100%;
+    box-sizing: border-box;
     font-family: inherit;
-    margin-bottom: 15px;    
+    margin-bottom: 15px;
 }
 
 .contact-form form {
@@ -405,6 +369,7 @@ footer {
     }
 }
 
+/* MAP & DETAILS */
 .find-us-container {
     display: flex;
     flex-wrap: wrap;
@@ -413,15 +378,14 @@ footer {
 }
 
 .find_header {
-	text-align: center;
-	margin: 20px auto
-	/*text-decoration: underline;*/
+    text-align: center;
+    margin: 20px auto;
 }
 
 .map-container {
     flex: 1.5;
-	width: 100%;
-	height:100%;
+    width: 100%;
+    height: 100%;
     min-width: 300px;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -430,7 +394,7 @@ footer {
 }
 
 .details-box {
-    flex: 1; /* Address and Socials take less space */
+    flex: 1;
     background: #f9f9f9;
     padding: 20px;
     border-radius: 8px;
@@ -441,7 +405,7 @@ footer {
     align-items: center;
     gap: 10px;
     padding: 10px 20px;
-    border: 2px solid #333; /* Dark grey outline */
+    border: 2px solid #333;
     border-radius: 8px;
     text-decoration: none;
     color: #333;
@@ -449,12 +413,11 @@ footer {
     transition: all 0.3s ease;
 }
 
-/* Hover Effect: The "Brilliant Bites" Upgrade */
 .instagram-btn:hover {
-    background-color: #E1306C; /* Instagram Pink */
+    background-color: #E1306C;
     border-color: #E1306C;
     color: white;
-    transform: translateY(-3px); /* Subtle lift */
+    transform: translateY(-3px);
     box-shadow: 0 4px 12px rgba(225, 48, 108, 0.3);
 }
 
@@ -463,22 +426,19 @@ footer {
 }
 
 .instagram-btn:hover svg {
-    stroke: white; /* Icon turns white on hover */
+    stroke: white;
 }
 
-
-/*ABOUT US */
-
-/* About Hero */
+/* ABOUT US HERO */
 .about-hero {
     color: #18870E;
     text-align: center;
-    padding: 40px 30px;
-	padding-bottom:10px;
+    padding: 40px 30px 10px 30px;
 }
 
 .about-hero h1 {
     font-size: 40px;
+    position: relative;
 }
 
 .about-hero h1::after {
@@ -486,12 +446,12 @@ footer {
     display: block;
     width: 180px;
     height: 4px;
-    background-color: #ffc107; /* yellow */
+    background-color: #ffc107;
     margin: 10px auto 0;
     border-radius: 5px;
 }
 
-/* About Content */
+/* ABOUT CONTENT */
 .about-content {
     padding: 60px 20px;
 }
@@ -504,8 +464,7 @@ footer {
     max-width: 1100px;
     margin: auto;
     flex-wrap: wrap;
-	padding-bottom: 50px;
-	
+    padding-bottom: 50px;
 }
 
 .about-text {
@@ -519,7 +478,7 @@ footer {
 
 .about-image {
     flex: 1;
-	width: 100%;
+    width: 100%;
     max-width: 400px;
 }
 
@@ -530,7 +489,7 @@ footer {
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-/* Mission Section */
+/* MISSION SECTION */
 .mission-section {
     background-color: #f9f9f9;
     padding: 60px 20px;
@@ -552,7 +511,7 @@ footer {
 }
 
 .mission-box:hover {
-    background-color: #F4F3A6;   /* light yellow */
+    background-color: #F4F3A6;
 }
 
 .mission-box h3 {
@@ -560,72 +519,56 @@ footer {
     margin-bottom: 10px;
 }
 
-/* Mobile Fix for About Us Page */
-@media (max-width: 768px) {
-    /* 1. Force the content section to use the full screen width */
-    .about-content {
-        padding: 40px 15px !important; /* Reduces the huge side-gaps */
+/* ABOUT & SERVICES MOBILE FIXES */
+@media(max-width: 768px) {
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
     }
-
-    /* 2. Stack the text and image */
-    .about-container {
-        display: block !important; /* Disables flexbox entirely for mobile */
-        width: 100% !important;
-    }
-
-    /* 3. Force the text box to be full width */
-    .about-text {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 0 !important;
-        margin-bottom: 30px;
-        text-align: center;
-    }
-
-    /* 4. Fix the paragraphs so they don't "squish" */
-    .about-text p {
+    .about-content, .about-container, .about-text {
         display: block !important;
         width: 100% !important;
-        margin-bottom: 15px;
-        font-size: 16px;
-        line-height: 1.6;
-    }
-
-    /* 5. Center the image and make it fit the screen */
-    .about-image {
-        width: 100% !important;
-        max-width: 300px !important; /* Prevents it from being too huge */
+        max-width: 100% !important;
+        min-width: 0 !important;
+        padding: 0 10px !important;
         margin: 0 auto !important;
+        box-sizing: border-box !important;
     }
-
+    .about-text p {
+        width: 100% !important;
+        display: block !important;
+        text-align: left !important;
+        margin-bottom: 15px !important;
+        word-wrap: break-word !important;
+    }
+    .about-image {
+        width: 90% !important;
+        margin: 20px auto !important;
+    }
     .about-image img {
         width: 100% !important;
-        height: auto;
+        height: auto !important;
     }
 }
 
-/* SERVICES */
-
-.services-hero{
+/* SERVICES HERO */
+.services-hero {
     text-align: center;
-    padding: 40px 30px;
-	padding-bottom:10px;
+    padding: 40px 30px 10px 30px;
 }
 
-/* Service List Container */
+/* SERVICES GRID */
 .services-section {
     padding: 80px 10%;
     background-color: #f9f9f9;
 }
 
-/* GRID LAYOUT */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
-/* SERVICE CARD BLOCK */
 .service-card {
     background-color: white;
     padding: 30px;
@@ -636,102 +579,51 @@ footer {
     cursor: pointer;
 }
 
-/* HOVER EFFECT */
 .service-card:hover {
-    background-color: #fff9c4;   /* light yellow */
+    background-color: #fff9c4;
     transform: translateY(-8px);
 }
 
-/* ICON */
 .service-icon {
     font-size: 40px;
     margin-bottom: 15px;
 }
 
-/* TITLE */
 .service-card h3 {
     color: #008000;
     margin-bottom: 10px;
 }
 
 .center-btn {
-            padding-top: 50px;
-            text-align: right; /* Moves the button to the right */
-            width: 100%;       /* Ensures the container spans the full width */
-            padding-right: 20px; /* Optional: adds a little space from the edge */
+    padding-top: 50px;
+    text-align: right;
+    width: 100%;
+    padding-right: 20px;
 }
 
- 
 .center-btn .btn {
-            background-color: #FFD700;
-            color: black;            /* Ensures text is visible */
-            text-decoration: none;   /* Removes the default link underline */
-            padding: 15px 30px;
-            border-radius: 25px;
-            display: inline-block;   /* Allows padding and width to work correctly */
-            text-transform: uppercase; /* Optional: makes it look more like a button */
-        }
+    background-color: #FFD700;
+    color: black;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    display: inline-block;
+    text-transform: uppercase;
+}
 
-        /* Hover effect to keep it interactive */
-        .center-btn .btn:hover {
-            background-color: #e6c200;
-        }
+.center-btn .btn:hover {
+    background-color: #e6c200;
+}
 
-/* MOBILE RESPONSIVE */
-@media (max-width: 992px) {
+/* SERVICES RESPONSIVE GRID */
+@media(max-width: 992px) {
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 600px) {
+@media(max-width: 600px) {
     .services-grid {
         grid-template-columns: 1fr;
-    }
-}
-
-/* --- THE ULTIMATE MOBILE FIX --- */
-@media screen and (max-width: 768px) {
-    
-    /* Force the body to not scroll sideways */
-    html, body {
-        overflow-x: hidden;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-    }
-
-    /* Reset the About Section entirely */
-    .about-content, .about-container, .about-text {
-        display: block !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important; /* Forces it to stop being 'wide' */
-        padding-left: 10px !important;
-        padding-right: 10px !important;
-        margin: 0 auto !important;
-        box-sizing: border-box !important;
-    }
-
-    /* Fix the paragraphs so they use the full width */
-    .about-text p {
-        width: 100% !important;
-        display: block !important;
-        text-align: left !important; /* Left align is often cleaner on mobile */
-        margin-bottom: 15px !important;
-        word-wrap: break-word !important; /* Prevents long words from pushing the edge */
-    }
-
-    /* Fix the image container */
-    .about-image {
-        display: block !important;
-        width: 90% !important;
-        margin: 20px auto !important;
-    }
-
-    .about-image img {
-        width: 100% !important;
-        height: auto !important;
-        display: block;
     }
 }
