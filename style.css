@@ -850,14 +850,10 @@ footer {
 }
 
 /* Mobile alignment for clinic name */
+/* Fix DENTAL alignment on mobile only */
 @media (max-width: 900px) {
-    .clinic-name {
-        display: flex !important;
-        margin-left: 0;
-        text-align: left;
-    }
-    
     .line2 {
         margin-left: 0 !important;
+        text-align: left;
     }
 }
