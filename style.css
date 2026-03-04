@@ -23,23 +23,62 @@ header {
 
 @media(max-width: 900px) {
     header {
-        flex-direction: row; /* Keeps items side-by-side */
-        flex-wrap: wrap;    /* Allows them to wrap if they run out of space */
-        justify-content: space-between;
+        flex-direction: row;        /* Keeps items in a single horizontal row */
+        flex-wrap: nowrap;         /* Prevents items from jumping to a new line */
+        justify-content: flex-start; /* Aligns everything to the left */
         padding: 10px 5%;
+        gap: 15px;                  /* Space between menu, button, and logo */
     }
 
-    .header-actions {
-        order: 2; /* Positions button nicely in the row */
-    }
-
-    .btn {
-        padding: 10px 20px; /* Makes the button slightly smaller for mobile screens */
-        font-size: 14px;
-    }
-
+    /* 1. Burger Menu on the far left */
     .menu-icon {
-        order: 3; /* Keeps burger menu on the far right */
+		color: black;
+        display: block;
+        order: 1; 
+        margin: 0;
+    }
+
+    /* 2. "Find Us" button next to it */
+    .header-actions {
+        display: block !important;  /* Forces visibility on all pages */
+        order: 2;
+    }
+
+    .header-actions .btn {
+        padding: 8px 12px;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    /* 3. Logo pushed to the right */
+    .logo-container {
+        order: 3;
+        margin-left: auto;          /* Pushes the logo to the right side */
+    }
+
+    .logo-img {
+        height: 60px;               /* Keeps the header slim on mobile */
+    }
+
+    .clinic-name {
+        display: none;              /* Hides text name on small screens to save space */
+    }
+
+    /* Navigation Menu Dropdown */
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;                  /* Adjust based on your header height */
+        left: 0;
+        width: 100%;
+        background: white;
+        border-bottom: 5px solid #FFD700;
+        z-index: 1000;
+    }
+
+    nav.active {
+        display: flex;
     }
 }
 
@@ -379,9 +418,7 @@ footer {
         font-size: 20px;
         text-align: center;
     }
-    .hide-on-mobile {
-        display: none;
-    }
+   
     header {
         flex-direction: column;
         gap: 10px;
