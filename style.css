@@ -63,9 +63,8 @@ header {
         display: none;
     }
 
-    /* CRITICAL FIX - Hide nav by default on mobile */
     nav {
-        display: none !important; /* Force hide on mobile */
+        display: none !important;
         flex-direction: column;
         position: absolute;
         top: 80px;
@@ -76,7 +75,6 @@ header {
         z-index: 1000;
     }
 
-    /* Show only when active class is added */
     nav.active {
         display: flex !important;
     }
@@ -87,6 +85,7 @@ header {
         border-bottom: 1px solid #eee;
     }
 }
+
 .green-header {
     background: #18870E;
     color: white;
@@ -173,25 +172,24 @@ header {
 
 /* Desktop Navigation */
 nav {
-    display: flex; /* Shows on desktop */
+    display: flex;
     top: 100px;
 }
 
-/* Hide desktop nav on mobile */
 @media (max-width: 900px) {
     nav {
-        display: none; /* Hidden by default on mobile */
+        display: none;
     }
     
     nav.active {
-        display: flex; /* Shows when burger is clicked */
+        display: flex;
     }
 }
 
 nav a {
     margin: 0 15px;
     text-decoration: none;
-    color: #000000; /* Black menu text */
+    color: #000000;
     font-weight: bold;
 }
 
@@ -291,11 +289,9 @@ nav a:hover {
 }
 
 @keyframes float {
-    0%,
-    100% {
+    0%, 100% {
         transform: translateY(0);
     }
-
     50% {
         transform: translateY(-15px);
     }
@@ -305,7 +301,6 @@ nav a:hover {
     .hero-side-img {
         display: none;
     }
-
     .hero-content {
         flex: 1;
     }
@@ -511,13 +506,12 @@ footer {
     .contact-container {
         flex-direction: column;
     }
-
     .contact-section {
         padding: 40px 5%;
     }
 }
 
-/* MAP & DETAILS - IMPROVED */
+/* MAP & DETAILS */
 .find-us-container {
     display: flex;
     flex-wrap: wrap;
@@ -671,7 +665,6 @@ footer {
 
 /* ABOUT & SERVICES MOBILE FIXES */
 @media (max-width: 768px) {
-
     html,
     body {
         overflow-x: hidden;
@@ -708,7 +701,6 @@ footer {
         height: auto !important;
     }
     
-    /* Mobile find-us improvements */
     .find-us-container {
         flex-direction: column;
         padding: 10px;
@@ -838,7 +830,6 @@ footer {
     background-color: #e6c200;
 }
 
-/* SERVICES RESPONSIVE GRID */
 @media (max-width: 992px) {
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -848,5 +839,12 @@ footer {
 @media (max-width: 600px) {
     .services-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* FINAL FIX - Burger menu hidden on desktop, visible on mobile */
+@media (min-width: 901px) {
+    .menu-icon {
+        display: none !important;
     }
 }
