@@ -856,11 +856,17 @@ footer {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        margin-left: 5px;
+        margin-left: 10px;
     }
     
     .line2 {
         margin-left: 0 !important;
         text-align: left;
+		letter-spacing: normal; /* Reset letter spacing for mobile */
+    }
+    
+    /* Specific fix for Samsung Internet */
+    .line2 {
+        transform: translateX(-1px); /* Fine-tune adjustment */
     }
 }
