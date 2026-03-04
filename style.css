@@ -23,45 +23,47 @@ header {
 
 @media(max-width: 900px) {
     header {
-        flex-direction: row;        /* Keeps items in a single horizontal row */
-        flex-wrap: nowrap;         /* Prevents items from jumping to a new line */
-        justify-content: flex-start; /* Aligns everything to the left */
+        display: flex;
+        flex-direction: row;        /* Keeps items in a single line */
+        align-items: center;        /* Centers them vertically */
+        justify-content: flex-start; /* Aligns items to the left */
         padding: 10px 5%;
-        gap: 15px;                  /* Space between menu, button, and logo */
+        gap: 15px;                  /* Space between menu and button */
     }
 
-    /* 1. Burger Menu on the far left */
+    /* 1. Burger Menu on the left */
     .menu-icon {
-		color: black;
         display: block;
-        order: 1; 
-        margin: 0;
+        color: #000000;             /* Menu icon color set to black */
+        order: 1;                   /* First position */
+        font-size: 30px;
+        cursor: pointer;
     }
 
     /* 2. "Find Us" button next to it */
     .header-actions {
-        display: block !important;  /* Forces visibility on all pages */
-        order: 2;
+        display: block !important;
+        order: 2;                   /* Second position */
     }
 
     .header-actions .btn {
-        padding: 8px 12px;
-        font-size: 13px;
-        white-space: nowrap;
+        padding: 8px 15px;
+        font-size: 14px;
+        white-space: nowrap;        /* Keeps text on one line */
     }
 
-    /* 3. Logo pushed to the right */
+    /* 3. Logo pushed to the right side */
     .logo-container {
         order: 3;
-        margin-left: auto;          /* Pushes the logo to the right side */
+        margin-left: auto;          /* Pushes logo to the far right */
     }
 
     .logo-img {
-        height: 60px;               /* Keeps the header slim on mobile */
+        height: 60px;
     }
 
     .clinic-name {
-        display: none;              /* Hides text name on small screens to save space */
+        display: none;              /* Hides text name to save space on mobile */
     }
 
     /* Navigation Menu Dropdown */
@@ -69,7 +71,7 @@ header {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 80px;                  /* Adjust based on your header height */
+        top: 80px; 
         left: 0;
         width: 100%;
         background: white;
