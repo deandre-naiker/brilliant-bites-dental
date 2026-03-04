@@ -79,8 +79,9 @@ header {
         display: none;
     }
 
+    /* CRITICAL FIX - Hide nav by default on mobile */
     nav {
-        display: none;
+        display: none !important; /* Force hide on mobile */
         flex-direction: column;
         position: absolute;
         top: 80px;
@@ -91,17 +92,17 @@ header {
         z-index: 1000;
     }
 
+    /* Show only when active class is added */
     nav.active {
-        display: flex;
+        display: flex !important;
     }
     
     nav a {
-        color: #000000 !important; /* Force black menu text on mobile */
+        color: #000000 !important;
         padding: 15px 20px;
         border-bottom: 1px solid #eee;
     }
 }
-
 .green-header {
     background: #18870E;
     color: white;
@@ -173,8 +174,19 @@ header {
 
 /* Desktop Navigation */
 nav {
-    display: flex;
+    display: flex; /* Shows on desktop */
     top: 100px;
+}
+
+/* Hide desktop nav on mobile */
+@media (max-width: 900px) {
+    nav {
+        display: none; /* Hidden by default on mobile */
+    }
+    
+    nav.active {
+        display: flex; /* Shows when burger is clicked */
+    }
 }
 
 nav a {
