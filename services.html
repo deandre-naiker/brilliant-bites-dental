@@ -11,7 +11,7 @@
 
 <body>
 
-<header class="contact-header">
+<header class="green-header">
     <div class="logo-container">
         <img src="logo.png" alt="Logo" class="logo-img">
         <div class="clinic-name">
@@ -20,14 +20,20 @@
         </div>
     </div>
 
-    <nav>
+    <div class="menu-icon" onclick="toggleMenu()">
+        &#9776;
+    </div>
+
+    <nav id="nav-menu">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
         <a href="contact.html">Contact</a>
     </nav>
-
-    <a href="find_us.html" class="btn">Find Us</a>
+	
+	<div class="header-actions hide-on-mobile">
+        <a href="find_us.html" class="btn">Find Us</a>
+    </div>
 </header>
 
 <section class="services-hero">
@@ -38,39 +44,52 @@
 <section class="services-section">
     <div class="services-grid">
         <div class="service-card">
-            <div class="service-icon">🪥</div>
             <h3>Cleaning and Polishing</h3>
-            <p>Maintain a bright, healthy smile with our thorough professional cleaning. We remove plaque and surface stains to keep your teeth sparkling and your gums healthy.</p>
+            <div class="service-image">
+                <img src="cleaning.jpg" alt="Professional Teeth Cleaning">
+            </div>
         </div>
 
         <div class="service-card">
-            <div class="service-icon">🦷</div>
             <h3>Tooth Extractions</h3>
-            <p>When a tooth cannot be saved, we provide gentle and efficient extraction services. Our team ensures your comfort while prioritizing your long-term oral health.</p>
+            <div class="service-image">
+                <img src="Tooth Extraction.jpg" alt="Gentle Tooth Extraction">
+            </div>
         </div>
 
         <div class="service-card">
-            <div class="service-icon">✨</div>
-            <h3>Tooth Restoration</h3>
-            <p>Repair decay or damaged teeth with high-quality fillings. We use durable materials that blend seamlessly with your natural teeth to restore strength.</p>
+            <h3>Tooth Restoration (Fillings)</h3>
+            <div class="service-image">
+                <img src="Filling.jpg" alt="Dental Filling Restoration">
+            </div>
         </div>
 
         <div class="service-card">
-            <div class="service-icon">😁</div>
-            <h3>Dentures</h3>
-            <p>Regain your smile and confidence with custom-fitted dentures. We design natural-looking replacements that help you eat, speak, and smile with ease.</p>
+            <h3>Dentures/Bridges</h3>
+            <div class="side-by-side-container">
+        <div class="service-image small">
+            <img src="Denture.jpg" alt="Custom Fitted Dentures">
+            <span class="image-label">Dentures</span>
+			</div>
+			<div class="service-image small">
+            <img src="Bridge.jpg" alt="Dental Bridge Restoration">
+            <span class="image-label">Bridges</span>
+			</div>
+			</div>
         </div>
 
         <div class="service-card">
-            <div class="service-icon">💎</div>
             <h3>Whitening</h3>
-            <p>Brighten your smile several shades with our safe and effective professional whitening treatments, removing deep-set stains for a radiant look.</p>
+            <div class="service-image">
+                <img src="White.jpg" alt="Professional Teeth Whitening">
+            </div>
         </div>
 
         <div class="service-card">
-            <div class="service-icon">👨‍👩‍👧‍👦</div>
-            <h3>Family Dentistry</h3>
-            <p>Specialized, gentle care for our youngest patients and comprehensive dental solutions for the whole family in a stress-free environment.</p>
+            <h3>Paediatric and Family Dentistry</h3>
+            <div class="service-image">
+                <img src="Family Dentistry.jpg" alt="Pediatric and Family Dental Care">
+            </div>
         </div>
     </div>
 
@@ -83,6 +102,13 @@
 <footer>
      <p>©  2024 Brilliant Bites Dental | All Rights Reserved</p>
 </footer>
+
+<script>
+function toggleMenu() {
+    const nav = document.getElementById("nav-menu");
+    nav.classList.toggle("active");
+}
+</script>
 
 </body>
 </html>

@@ -1,5 +1,5 @@
-<!lDOCTYPE html>
-<htm lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Brilliant Bites Dental</title>
@@ -17,8 +17,10 @@
             <span class="line2">DENTAL</span>
         </div>
     </div>
-
-<div class="menu-icon" onclick="toggleMenu()">☰</div>
+	
+	<div class="menu-icon" onclick="toggleMenu()">
+        &#9776;
+    </div>
 
     <nav id="nav-menu">
         <a href="index.html">Home</a>
@@ -34,47 +36,24 @@
 
     <!-- Hero Section -->
     <section class="hero">
+	
+	<div class="hero-container">
+        <div class="hero-side-img left">
+            <img src="rep_view.jpeg" alt="Dental Care">
+        </div>
         <div class="hero-content">
             <h1>Where Smiles Begin! </h1>
             <p>Professional, gentle and affordable dental care for the whole family.</p>
             <a href="contact.html" class="schedule-btn">Schedule Appointment</a>
         </div>
-    </section>
-
-    <!-- Services Preview -->
-    <section class="services">
-        <h2>Our Services</h2>
-        <div class="service-cards">
-            <div class="card">
-                <h3>Cleaning and Polishing</h3>
-                <p>Professional scaling to remove plaque and surface stains for a healthier, brighter smile.</p>
-            </div>
-			 <div class="card">
-                <h3>Tooth Extractions</h3>
-                <p>Safe and gentle removal of damaged or crowded teeth with a focus on quick recovery.</p>
-            </div>
-
-            <div class="card">
-                <h3>Tooth Restoration (Fillings)</h3>
-                <p>Durable, tooth-colored fillings designed to restore strength and stop further decay.</p>
-            </div>
-            <div class="card">
-                <h3>Dentures</h3>
-                <p>Custom-fitted full or partial replacements to restore your natural look and function.</p>
-            </div>
-			
-			<div class="card">
-                <h3>Whitening</h3>
-                <p>Professional treatments that safely lift deep stains for a noticeably more radiant smile.</p>
-            </div>
-			
-			<div class="card">
-                <h3>Paediatric and Family Dentistry</h3>
-                <p>Friendly, comprehensive dental care tailored for every member of the family, from kids to seniors.</p>
-            </div>
+		
+		<div class="hero-side-img right">
+            <img src="chair_view.jpeg" alt="Healthy Tooth">
         </div>
+		
+	</div>
     </section>
-
+	
     <!-- About Preview -->
     <section class="about-index">
         <div class="about-text">
@@ -83,6 +62,52 @@
         <p>We offer affordable, high-quality care, personalized attention, and a friendly environment for the whole family. Your comfort and confidence are our priority!</p>
         </div>
     </section>
+	
+    <!-- Services Preview -->
+    <section class="services">
+        <h2>Patient Reviews</h2>
+        <div class="service-cards">
+            <div class="card">
+                <h3>Hlobisile Zama</h3>
+				<div class="stars">★★★★★</div>
+                <p>"Dr. Naicker is super professional. She has gentle, steady hands. She makes you feel safe and in great hands. Her work is remarkable😁  She leaves you smiling for days. You may feel like you have known her for years, that's how great she is with people, let alone your teeth.
+Her practice is clean and orderly. There is secure parking."</p>
+            </div>
+			 <div class="card">
+                <h3>PikaPika</h3>
+				<div class="stars">★★★★★</div>
+                <p>"Amazing service and such a lovely dentist! 💫 She’s professional, gentle, and genuinely cares about her patients’ wellbeing. What really stands out is that she’s affordable and understanding — she doesn’t try to take all your money like some other doctors do. Instead, she explains your options clearly and helps you choose the best treatment plan based on your budget. Highly recommend Brilliant Bites Dental for anyone looking for honest, caring, and quality dental care. 🦷✨"</p>
+            </div>
+
+            <div class="card">
+                <h3>Kamva Hombile</h3>
+				<div class="stars">★★★★★</div>
+                <p>"The best dental service I’ve ever received. Dr Naicker is the sweetest, most professional doctor. Sara her assistant is also amazing!  10/10 service, so much care, gentleness and professionalism. The space is clean and inviting. Her consultation fee is also affordable making it accessible. I was super impressed by the service, we need more doctors like this!"</p>
+            </div>
+            <div class="card">
+                <h3>Mags Dittberner</h3>
+				<div class="stars">★★★★★</div>
+                <p>"We all hate Dentists... let's be honest. Brilliant Bites Dental in Randburg Square Shopping Center, got me in and out the chair, with a full check up, cleaning and filling in 30 mins. Their service and how they make sure you are feeling comfortable at all times really helped my anxiety. They then followed up a few days later to make sure everything was good. That was a definite first. Good service, fear management and follow up calls? This was definitely a first, I cannot recommend them any more, do yourself a favour if you in the area pop in, they do walk ins as well so no appointment needed."</p>
+            </div>
+			
+			<div class="card">
+                <h3>Yolandre Pieterse</h3>
+				<div class="stars">★★★★★</div>
+                <p>"The most humble Dr.  Ever and the service is exceptional and they are gentle ,as a parent I was scared that my daughter had to visit a dentist and when I got to Brilliant bites dental I was so relieved once the dentist explained to me about what needs to happen … the healing process is beyond amazing aswell . I highly recommend their services."</p>
+            </div>
+			
+			<div class="card">
+                <h3>Sideshan Moodley</h3>
+				<div class="stars">★★★★★</div>
+                <p>"Exceptional Dental Care with Dr. BK Naicker
+
+Dr. BK Naicker is by far the best dentist I have ever been to! I usually dread dental visits because many dentists can be aggressive, but Dr. Naicker is the complete opposite—gentle, professional, and truly dedicated to patient care. She pays incredible attention to detail and ensures that every procedure is done with precision and care. What I appreciate most is her genuine concern for her patients, always striving to provide the best possible treatment. If you’re looking for a skilled and compassionate dentist, I highly recommend Dr. BK Naicker!"
+</p>
+            </div>
+        </div>
+    </section>
+
+
 
     <!-- Footer -->
     <footer>
@@ -91,7 +116,7 @@
 
 <script>
 function toggleMenu() {
-    const nav = document.querySelector('nav');
+    const nav = document.getElementById('nav-menu');
     nav.classList.toggle('active');
 }
 </script>
