@@ -114,6 +114,21 @@ header {
     color: #F7CC03;
 }
 
+/* Hide burger menu on desktop by default */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+}
+
+/* Show burger menu only on mobile */
+@media (max-width: 900px) {
+    .menu-icon {
+        display: block;
+    }
+}
+
 .logo-container {
     display: flex;
     align-items: center;
