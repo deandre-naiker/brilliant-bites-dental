@@ -392,40 +392,10 @@ footer {
     display: none;
     font-size: 30px;
     cursor: pointer;
-    color: #18870E;
+    color: black;
     margin-left: 15px;
 }
 
-@media(max-width: 900px) {
-    .menu-icon {
-        display: block;
-    }
-    nav {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 150px;
-        left: 0;
-        width: 100%;
-        background: white;
-        border-bottom: 5px solid #FFD700;
-        padding: 20px 0;
-        z-index: 1000;
-    }
-    nav.active {
-        display: flex;
-    }
-    nav a {
-        margin: 10px 0;
-        font-size: 20px;
-        text-align: center;
-    }
-   
-    header {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
 
 /* CONTACT PAGE */
 .contact-header {
